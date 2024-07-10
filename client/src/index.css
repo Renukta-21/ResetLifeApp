@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .summary li {
+        @apply flex items-center whitespace-nowrap ml-3
+    }
+
+    .summary {
+        @apply flex bg-gray-200 w-fit py-2
+    }
+
+    .summary li img {
+        @apply mx-3
+    }
+
+    .buttons {
+        @apply mt-3 mb-5
+    }
+
+    .buttons button {
+        @apply px-3 py-1 border border-black mr-2 rounded-sm
+    }
+
+    .buttons button {
+        box-shadow: 5px 5px 0px black;
+    }
+
+    .buttons button span {
+        pointer-events: none;
+    }
+
+    .selected {
+        background-color: black;
+        color: white;
+        box-shadow: 5px 5px 0px white;
+    }
+
+    .taskCard {
+        box-shadow: 5px 5px 0px black;
+    }
+
+    .taskCard {
+        @apply mt-4 h-[240px] rounded-lg bg-cover p-5 border border-2 border-black
+    }
+
+    .taskCard .text {
+        text-shadow:-1px -1px #000
+    }
+
+    /* Agrega más clases según tus necesidades */
+
+}

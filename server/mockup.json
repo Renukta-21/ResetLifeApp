@@ -1,0 +1,32 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Complete project report",
+            "description": "Finish the final report for the project and submit it to the manager",
+            "status": "completed",
+            "period": "Everyday"
+        },
+        {
+            "id": 2,
+            "title": "Prepare presentation",
+            "description": "Create slides for the upcoming client presentation",
+            "status": "to do",
+            "period": "Everyday"
+        },
+        {
+            "id": 3,
+            "title": "Team meeting",
+            "description": "Attend the weekly team meeting to discuss project updates",
+            "status": "to do",
+            "period": "Everyday"
+        },
+        {
+            "id": 4,
+            "title": "Code review",
+            "description": "Review the code submitted by the team and provide feedback",
+            "status": "completed",
+            "period": "Everyday"
+        }
+    ]
+}
