@@ -10,10 +10,10 @@ function Tasks() {
     activeButtonRef.current = document.getElementById('1')
     activeButtonRef.current.classList.add('selected')
 
-    fetch('./data/tasks.json')
+    fetch('http://localhost:3000/todos')
       .then(res => res.json())
       .then(data => {
-        setTasks({ todos: data.todos, completed: data.completed })
+        setTasks({ todos: data })
       })
   }, [])
 
