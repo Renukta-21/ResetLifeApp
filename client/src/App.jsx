@@ -6,7 +6,7 @@ import calendar from './assets/calendarIcon.svg'
 
 function App() {
   return (
-    <div className="bg-main-gray min-h-screen relative">
+    <div className="bg-main-gray min-h-screen relative pb-20">
       <MainUI />
       <div className="navBar">
         <button><img src={home} alt="" /></button>

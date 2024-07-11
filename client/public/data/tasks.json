@@ -1,0 +1,31 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "task": "Drink 2L of water",
+      "streak": 5,
+      "repeat": "Everyday",
+      "icon":"water",
+      "bg-imageID":"waterBG",
+      "description":"Stad hydrateded, stay energised"
+    },
+    {
+      "id": 2,
+      "task": "Workout",
+      "streak": 5,
+      "repeat": "5 days per week",
+      "icon":"gym",
+      "bg-imageID":"gymBG",
+      "description":"Stay strong, be a man"
+    }
+  ],
+  "completed": [
+    {
+      "id": 3,
+      "task": "Clean the kitchen",
+      "description": "Wash dishes and mop the floor",
+      "streak": 10,
+      "repeat": "Daily"
+    }
+  ]
+}

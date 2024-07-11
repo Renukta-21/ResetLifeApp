@@ -1,6 +1,17 @@
 import { useState, useRef, useEffect } from "react"
 import checkIcon from '../assets/check.svg'
 import crossIcon from '../assets/crosss.svg'
+import water from '../assets/water.svg'
+import gym from '../assets/gym.svg'
+import wakeUp from '../assets/wakeUp.svg'
+
+
+const iconMap = {
+    water,
+    gym,
+    wakeUp,
+    // Agrega más íconos aquí según sea necesario
+};
 
 function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
     const [firstTouch, setfirstTouch] = useState(null)
@@ -25,19 +36,15 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
             setOffsetX(-200)
         }
     }
-    const handleEnd = (e) => {
-
-    }
     return (
-        <div className="bg-red-300 flex w-fit"
+        <div className="flex w-fit"
             onTouchStart={handleSwipe}
             onTouchMove={handleMove}
-            onTouchEnd={handleEnd}
             style={{
                 transform: `translateX(${offsetX}px)`,
                 transition: 'transform 0.3s ease'
             }}>
-            <div className="w-[200px] bg-gray-400 flex flex-col items-center justify-center">
+            <div className="w-[200px] flex flex-col items-center justify-center gap-3">
                 <button className="shadow-drop bg-green-600 w-[120px] p-2 flex flex-col items-center rounded-md">
                     <img src={checkIcon} alt="" />
                     <p className="text-white">Mark as done</p>
@@ -50,7 +57,7 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
             <div className={`bg-${bg} taskCard`} style={{ width: originalDim.width }}>
                 <div className="flex">
                     <div>
-                        <img src={icon} alt="" />
+                        <img src={iconMap[icon]} alt="" />
                     </div>
                     <div className="brightness-10">
                         <h4 className="text-white font-bold text-2xl text">{task}</h4>

@@ -1,11 +1,21 @@
-import { useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import TaskCard from "./TaskCard"
-import water from '../assets/water.svg'
-import gym from '../assets/gym.svg'
-import wakeUp from '../assets/wakeUp.svg'
+
 
 function Tasks() {
+  const [tasks, setTasks] = useState({ todos: null, completed: null })
+
   const activeButtonRef = useRef(null);
+  useEffect(() => {
+    activeButtonRef.current = document.getElementById('1')
+    activeButtonRef.current.classList.add('selected')
+
+    fetch('./data/tasks.json')
+      .then(res => res.json())
+      .then(data => {
+        setTasks({ todos: data.todos, completed: data.completed })
+      })
+  }, [])
 
   const handleActive = (e) => {
     // Remueve la clase 'selected' del botón activo actual
@@ -24,9 +34,22 @@ function Tasks() {
         <button id="3" onClick={handleActive}>Skipped <span>(0)</span></button>
       </div>
       <div>
-        <TaskCard icon={water} bg='waterBG' task={'Drink 2L of water'} streak={'10 days'} repeat={'Everyday'} description={'Stad hydrateded, stay energised'} />
-        <TaskCard icon={gym} bg='gymBG' task={'Workout'} streak={'8 days'} repeat={'Everyday'} description={'Stay strong, be a man'} darkCard={true} />
-        <TaskCard icon={wakeUp} bg='wakeUpBG' task={'Wake up at 7:30am'} streak={'8 days'} repeat={'monday to friday'} description={'Start your day with energy and purpose'}  />
+        {tasks.todos &&
+          tasks.todos.map(task => {
+            return (
+              <TaskCard
+              key={task.id}
+              icon={task.icon}
+              bg={task["bg-imageID"]}
+              streak={task.streak}
+              repeat={task.repeat}
+              task={task.task}
+              description={task.description}
+              darkCard={true}
+              />
+            )
+          })
+        }
       </div>
     </div>
   )
