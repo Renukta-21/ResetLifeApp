@@ -4,9 +4,9 @@ import Tasks from './Tasks'
 
 function MainUI() {
     return (
-        <div>
+        <div className='overflow-hidden'>
             <CompletedSumarry />
-            <div className='mx-4'>
+            <div className='mx-4' id='container'>
                 <CurrentDay />
                 <Tasks />
             </div>

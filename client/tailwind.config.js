@@ -15,13 +15,18 @@ export default {
       },
       backgroundImage:{
         'waterBG': "url('/src/assets/waterBG.webp')",
-        'gymBG':"url('/src/assets/gymBG.webp')"
+        'gymBG':"url('/src/assets/gymBG.webp')",
+        'wakeUpBG':"url('/src/assets/wakeUpBG.webp')",
+      },
+      boxShadow:{
+        'drop': "5px 5px 0px black"
       }
     },
   },
   safelist:[
     'bg-waterBG',
-    'bg-gymBG'
+    'bg-gymBG',
+    'bg-wakeUpBG',
   ],
   plugins: [],
 }

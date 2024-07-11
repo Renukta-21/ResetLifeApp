@@ -1,14 +1,18 @@
 import MainUI from "./Main UI/MainUI"
+import statsIcon from './assets/statsIcon.svg'
+import home from './assets/mainIcon.svg'
+import dots from './assets/dotsIcon.svg'
+import calendar from './assets/calendarIcon.svg'
 
 function App() {
   return (
-    <div className="bg-main-gray  min-h-screen">
+    <div className="bg-main-gray min-h-screen relative">
       <MainUI />
-      <div className="fixed bottom-0 border border-t-black py-4 flex justify-between w-full z-50 bg-navigation">
-        <button>o</button>
-        <button>o</button>
-        <button>o</button>
-        <button>o</button>
+      <div className="navBar">
+        <button><img src={home} alt="" /></button>
+        <button><img src={statsIcon} alt="" /></button>
+        <button><img src={calendar} alt="" /></button>
+        <button><img src={dots} alt="" /></button>
       </div>
     </div>
   )

@@ -3,12 +3,31 @@
 @tailwind utilities;
 
 @layer components {
+    .navBar{
+        @apply fixed bottom-0 border border-t-black py-4 flex justify-around w-screen z-50 bg-navigation
+    }
+    .navBar button img{
+        width: 30px;
+    }
+    @keyframes scroll{
+        0%{
+            transform: translateX(0);
+        }100%{
+            transform: translateX(-430px);
+        }
+    }
+    .summary-wrapper{
+        padding: 4px;
+        display: flex;
+        animation: scroll 10s linear infinite;
+    }
+      .summary {
+        display: flex;
+        width: 430px;
+      }
+
     .summary li {
         @apply flex items-center whitespace-nowrap ml-3
-    }
-
-    .summary {
-        @apply flex bg-gray-200 w-fit py-2
     }
 
     .summary li img {
@@ -48,7 +67,24 @@
     .taskCard .text {
         text-shadow:-1px -1px #000
     }
+    .taskCard img{
+        @apply border rounded-full p-2 mr-3
+    }
+    .taskCard .details li span{
+        text-shadow: -1px -1px 0 black,
+                    1px 1px 0px black,
+                    -1px 1px 0px black,
+                    1px -1px 0px black;
+                  
 
+        @apply text-white text-[18px]
+    }
+    .taskCard .description{
+        @apply font-semibold
+    }
+    .text-shadow-white{
+        text-shadow: -1px -1px white;
+    }
     /* Agrega más clases según tus necesidades */
 
 }
