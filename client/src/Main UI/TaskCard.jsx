@@ -4,21 +4,26 @@ import crossIcon from '../assets/crosss.svg'
 
 function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
     const [firstTouch, setfirstTouch] = useState(null)
-    const [dragX, setDragX] = useState(0)
-    const [offsetX, setoffsetX] = useState(0)
-    const [originalDim, setOriginalDim] = useState({ width: 0})
+    const [offsetX, setOffsetX] = useState(-200)
+    const [originalDim, setOriginalDim] = useState({ width: 0 })
 
-    useEffect(()=>{
+    useEffect(() => {
         const container = document.getElementById('container')
-        setOriginalDim({width:container.offsetWidth})
-    },[])
+        setOriginalDim({ width: container.offsetWidth })
+    }, [])
 
     const handleSwipe = (e) => {
+        console.log(e.touches[0].clientX)
         setfirstTouch(e.touches[0].clientX)
     }
     const handleMove = (e) => {
-        setDragX(e.touches[0].clientX)
-        setoffsetX(dragX - firstTouch)
+        const currentX = e.touches[0].clientX;
+        const moveOffset = currentX - firstTouch;
+        if (moveOffset > 60) {
+            setOffsetX(0)
+        } else if (moveOffset < -60) {
+            setOffsetX(-200)
+        }
     }
     const handleEnd = (e) => {
 
@@ -28,7 +33,10 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
             onTouchStart={handleSwipe}
             onTouchMove={handleMove}
             onTouchEnd={handleEnd}
-            style={{ transform: `translateX(${-200}px)` }}>
+            style={{
+                transform: `translateX(${offsetX}px)`,
+                transition: 'transform 0.3s ease'
+            }}>
             <div className="w-[200px] bg-gray-400 flex flex-col items-center justify-center">
                 <button className="shadow-drop bg-green-600 w-[120px] p-2 flex flex-col items-center rounded-md">
                     <img src={checkIcon} alt="" />
@@ -39,7 +47,7 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
                     <p className="text-white">Mark as done</p>
                 </button>
             </div>
-            <div className={`bg-${bg} taskCard`} style={{width:originalDim.width}}>
+            <div className={`bg-${bg} taskCard`} style={{ width: originalDim.width }}>
                 <div className="flex">
                     <div>
                         <img src={icon} alt="" />
