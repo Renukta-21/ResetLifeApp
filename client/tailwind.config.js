@@ -16,6 +16,7 @@ export default {
       backgroundImage:{
         'waterBG': "url('/src/assets/waterBG.webp')",
         'gymBG':"url('/src/assets/gymBG.webp')",
+        'kitchenBG':"url('/src/assets/kitchenBG.webp')",
         'wakeUpBG':"url('/src/assets/wakeUpBG.webp')",
       },
       boxShadow:{
@@ -27,6 +28,7 @@ export default {
     'bg-waterBG',
     'bg-gymBG',
     'bg-wakeUpBG',
+    'bg-kitchenBG',
   ],
   plugins: [],
 }

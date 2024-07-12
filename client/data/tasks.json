@@ -21,11 +21,13 @@
   ],
   "completed": [
     {
-      "id": 3,
+      "id": 2,
       "task": "Clean the kitchen",
-      "description": "Wash dishes and mop the floor",
-      "streak": 10,
-      "repeat": "Daily"
+      "streak": 5,
+      "repeat": "3 days per week",
+      "icon":"kitchen",
+      "bg-imageID":"kitchenBG",
+      "description":"Wash dishes and mop the floor"
     }
   ]
 }

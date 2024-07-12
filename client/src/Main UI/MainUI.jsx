@@ -2,12 +2,12 @@ import CompletedSumarry from './CompletedSumarry'
 import CurrentDay from './CurrentDay'
 import Tasks from './Tasks'
 
-function MainUI() {
+function MainUI({toggleNewTask}) {
     return (
         <div className='overflow-hidden'>
             <CompletedSumarry />
             <div className='mx-4' id='container'>
-                <CurrentDay />
+                <CurrentDay toggleNewTask={toggleNewTask}/>
                 <Tasks />
             </div>
         </div>
