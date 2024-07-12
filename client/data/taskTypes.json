@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+      "task": "Drink 2L of water",
+      "streak": 5,
+      "repeat": "Everyday",
+      "icon":"water",
+      "bg-imageID":"waterBG",
+      "description":"Stad hydrateded, stay energised",
+      "types": [
+            {
+                "taskId": 1,
+                "name": "Correr 5 km",
+                "completed": false
+            },
+            {
+                "taskId": 2,
+                "name": "Hacer 50 flexiones",
+                "completed": false
+            }
+        ]
+    }
+]

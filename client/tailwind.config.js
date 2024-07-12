@@ -8,7 +8,13 @@ export default {
     extend: {
       colors:{
         "main-gray": "rgb(234, 232, 232)",
-        "navigation":"rgb(226, 224, 220)"
+        "navigation":"rgb(226, 224, 220)",
+        "gym": "rgb(33, 43, 87)",
+        'study': 'rgb(109, 169, 210)',
+        'exercise': 'rgb(255, 148, 77)',
+        'leisure': 'rgb(144, 190, 109)',
+        'chores': 'rgb(255, 121, 1)',
+        'work': 'rgb(138, 109, 183)',
       },
       fontFamily:{
         sans: ['Kanit', 'sans-serif'],
@@ -29,6 +35,12 @@ export default {
     'bg-gymBG',
     'bg-wakeUpBG',
     'bg-kitchenBG',
+    'bg-work',
+    'bg-study',
+    'bg-chores',
+    'bg-study',
+    'bg-leisure',
+    'bg-gym',
   ],
   plugins: [],
 }

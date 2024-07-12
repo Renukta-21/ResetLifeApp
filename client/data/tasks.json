@@ -17,11 +17,20 @@
       "icon":"gym",
       "bg-imageID":"gymBG",
       "description":"Stay strong, be a man"
+    },
+    {
+      "id": 3,
+      "task": "Workout",
+      "streak": 5,
+      "repeat": "5 days per week",
+      "icon":"gym",
+      "bg-imageID":"gymBG",
+      "description":"Stay strong, be a man"
     }
   ],
   "completed": [
     {
-      "id": 2,
+      "id": 5,
       "task": "Clean the kitchen",
       "streak": 5,
       "repeat": "3 days per week",
