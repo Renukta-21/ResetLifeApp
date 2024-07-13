@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react"
 import TaskCard from "./TaskCard"
 import axios from "axios";
 
-
 function Tasks() {
   const [tasks, setTasks] = useState({ todos: null, completed: null })
   const [activeTab, setActiveTab] = useState('todos'); 
@@ -38,12 +37,13 @@ function Tasks() {
   return (
     <div>
       <div className="buttons">
-        <button id="1" onClick={(e)=> handleActive(e,'todos')}>To-dos <span>(3)</span></button>
-        <button id="2" onClick={(e)=> handleActive(e,'completed')}>Done <span>(2)</span></button>
+        <button id="1" onClick={(e)=> handleActive(e,'todos')}>To-dos <span>(0)</span></button>
+        <button id="2" onClick={(e)=> handleActive(e,'completed')}>Done <span>(0)</span></button>
         <button id="3" onClick={(e)=> handleActive(e,'skipped')}>Skipped <span>(0)</span></button>
       </div>
       <div>
-        {activeTab==='todos' && tasks.todos &&
+        {activeTab==='todos' &&  
+          tasks.todos !==null && tasks.todos.length ? 
           tasks.todos.map(task => {
             return (
               <TaskCard
@@ -57,9 +57,10 @@ function Tasks() {
               darkCard={true}
               />
             )
-          })
+          }):
+          <h2 className="w-full text-center">No tasks yet, try adding one</h2>
         }
-        {activeTab==='completed' && tasks.completed &&
+        {/* {activeTab==='completed' && tasks.completed &&
           tasks.completed.map(task=>{
             return(
               <TaskCard
@@ -73,7 +74,7 @@ function Tasks() {
               darkCard={true}
               />
             )
-          })}
+          })} */}
       </div>
     </div>
   )
