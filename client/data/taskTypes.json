@@ -44,23 +44,5 @@
         "repeat": "5 days per week",
         "bg-imageID": "workBG",
         "description": "Getting on hard work"
-    },
-    {
-        "id": 6,
-        "type": "work",
-        "task": "Work",
-        "streak": 5,
-        "repeat": "5 days per week",
-        "bg-imageID": "workBG",
-        "description": "Getting on hard work"
-    },
-    {
-        "id": 7,
-        "type": "work",
-        "task": "Work",
-        "streak": 5,
-        "repeat": "5 days per week",
-        "bg-imageID": "workBG",
-        "description": "Getting on hard work"
     }
 ]
