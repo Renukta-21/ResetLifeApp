@@ -43,7 +43,7 @@ function App() {
     !prevValue)
   return (
     <div id="mainPage">
-      <div className="bg-red-500 min-h-screen relative pb-20 overflow-hidden">
+      <div className=" min-h-screen relative pb-20 overflow-hidden">
         {/* {toggleNewTask===true&&} */}
         <AddTask handleBack={handleBack} toggleNewTask={toggleNewTask} taskDiv={taskDiv} activeNewTask={activeNewTask} setActiveNewTask={setActiveNewTask}/>
         <MainUI />
