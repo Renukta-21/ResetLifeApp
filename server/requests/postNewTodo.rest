@@ -1,0 +1,12 @@
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+        "id": 3,
+        "type": "study",
+        "task": "Study Time",
+        "streak": 5,
+        "repeat": "5 days per week",
+        "bg-imageID": "studyBG",
+        "description": "A wise man always will be prepared"
+    }

@@ -1,14 +1,15 @@
 {
-  "todos": [],
+  "todos": [
+  ],
   "completed": [
     {
-      "id": 5,
+      "id": "5",
       "task": "Clean the kitchen",
       "streak": 5,
       "repeat": "3 days per week",
-      "icon":"kitchen",
-      "bg-imageID":"kitchenBG",
-      "description":"Wash dishes and mop the floor"
+      "icon": "kitchen",
+      "bg-imageID": "kitchenBG",
+      "description": "Wash dishes and mop the floor"
     }
   ]
 }
