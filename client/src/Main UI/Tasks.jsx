@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useContext } from "react"
 import TaskCard from "./TaskCard"
+import { TaskContext } from "../TaskContext";
 import axios from "axios";
 
 function Tasks() {
   const [tasks, setTasks] = useState({ todos: null, completed: null })
   const [activeTab, setActiveTab] = useState('todos'); 
-
+  const {toggleNewTask} = useContext(TaskContext)
   const activeButtonRef = useRef(null);
   useEffect(() => {
     activeButtonRef.current = document.getElementById('1')
@@ -22,7 +23,7 @@ function Tasks() {
     }
     fetchData()
 
-  }, [])
+  }, [toggleNewTask])
 
   const handleActive = (e, tab) => {
     // Remueve la clase 'selected' del botón activo actual
@@ -37,7 +38,7 @@ function Tasks() {
   return (
     <div>
       <div className="buttons">
-        <button id="1" onClick={(e)=> handleActive(e,'todos')}>To-dos <span>(0)</span></button>
+        <button id="1" onClick={(e)=> handleActive(e,'todos')}>To-dos <span>({tasks.todos?tasks.todos.length:'0'})</span></button>
         <button id="2" onClick={(e)=> handleActive(e,'completed')}>Done <span>(0)</span></button>
         <button id="3" onClick={(e)=> handleActive(e,'skipped')}>Skipped <span>(0)</span></button>
       </div>
