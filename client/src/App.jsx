@@ -10,6 +10,7 @@ import work from './assets/work.svg'
 import leisure from './assets/leisure.svg'
 import chores from './assets/chores.svg'
 import study from './assets/study.svg'
+import health from './assets/health.svg'
 
 import { TaskContext, TaskProvider } from './TaskContext'
 import { useContext, useEffect, useRef, useState } from "react"
@@ -18,7 +19,7 @@ import axios from "axios"
 
 
 const mappedICons = {
-  gym, work, leisure, chores, study
+  gym, work, leisure, chores, study, health
 }
 
 
@@ -142,6 +143,16 @@ const handleNewTask = (e) => {
         description: newTask.description
       }
       break
+    case 6:
+      taskData={
+        "id": 6,
+        "type": "health",
+        "task": "health",
+        "streak": 5,
+        "repeat": "5 days per week",
+        "bg-imageID": "healthBG",
+        "description": "Keep up health, long life"
+    }
     // Agrega más casos si es necesario
     default:
       return
@@ -168,11 +179,11 @@ return (
     </div>
     <div>
       {taskTypes.map(task => (
-        <div key={task.id}>
-          <button className={`flex bg-${task.type} w-full py-2 px-4 my-3`}
+        <div key={task.id} >
+          <button className={`flex bg-${task.type} items-center w-full py-2 px-4 my-3`}
             onClick={() => handleClick(task.id)}>
             <img src={mappedICons[task.type]} alt="" className="w-8 mr-4" />
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-between w-full ">
               <p className="text-white">{task.type}</p>
               <img src={arrowRight} alt="" />
             </div>

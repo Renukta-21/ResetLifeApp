@@ -44,5 +44,14 @@
         "repeat": "5 days per week",
         "bg-imageID": "workBG",
         "description": "Getting on hard work"
+    },
+    {
+        "id": 6,
+        "type": "health",
+        "task": "health",
+        "streak": 5,
+        "repeat": "5 days per week",
+        "bg-imageID": "healthBG",
+        "description": "Keep up health, long life"
     }
 ]

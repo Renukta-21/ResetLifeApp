@@ -15,6 +15,7 @@ export default {
         'leisure': 'rgb(144, 190, 109)',
         'chores': 'rgb(255, 121, 1)',
         'work': 'rgb(138, 109, 183)',
+        'health': 'rgb(255, 85, 85)',
       },
       fontFamily:{
         sans: ['Kanit', 'sans-serif'],
@@ -22,6 +23,10 @@ export default {
       backgroundImage:{
         'waterBG': "url('/src/assets/waterBG.webp')",
         'gymBG':"url('/src/assets/gymBG.webp')",
+        'studyBG':"url('/src/assets/studyBG.webp')",
+        'chilloutBG':"url('/src/assets/chilloutBG.webp')",
+        'workBG':"url('/src/assets/workBG.webp')",
+        'healthBG':"url('/src/assets/healthBG.webp')",
         'kitchenBG':"url('/src/assets/kitchenBG.webp')",
         'wakeUpBG':"url('/src/assets/wakeUpBG.webp')",
       },
@@ -34,13 +39,19 @@ export default {
     'bg-waterBG',
     'bg-gymBG',
     'bg-wakeUpBG',
+    'bg-studyBG',
+    'bg-chilloutBG',
+    'bg-workBG',
+    'bg-healthBG',
     'bg-kitchenBG',
+    'bg-healthBG',
     'bg-work',
     'bg-study',
     'bg-chores',
     'bg-study',
     'bg-leisure',
     'bg-gym',
+    'bg-health'
   ],
   plugins: [],
 }

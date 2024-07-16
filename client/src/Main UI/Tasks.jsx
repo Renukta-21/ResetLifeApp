@@ -39,7 +39,7 @@ function Tasks() {
     <div>
       <div className="buttons">
         <button id="1" onClick={(e)=> handleActive(e,'todos')}>To-dos <span>({tasks.todos?tasks.todos.length:'0'})</span></button>
-        <button id="2" onClick={(e)=> handleActive(e,'completed')}>Done <span>(0)</span></button>
+        <button id="2" onClick={(e)=> handleActive(e,'completed')}>Done <span>({tasks.completed?tasks.completed.length:'0'})</span></button>
         <button id="3" onClick={(e)=> handleActive(e,'skipped')}>Skipped <span>(0)</span></button>
       </div>
       <div>
@@ -49,19 +49,21 @@ function Tasks() {
             return (
               <TaskCard
               key={task.id}
+              id={task.id}
               icon={task.icon}
               bg={task["bg-imageID"]}
               streak={task.streak}
               repeat={task.repeat}
               task={task.task}
               description={task.description}
+              setTasks={setTasks}
               darkCard={true}
               />
             )
           }):
           <h2 className="w-full text-center">No tasks yet, try adding one</h2>
         }
-        {/* {activeTab==='completed' && tasks.completed &&
+        {activeTab==='completed' && tasks.completed &&
           tasks.completed.map(task=>{
             return(
               <TaskCard
@@ -75,7 +77,7 @@ function Tasks() {
               darkCard={true}
               />
             )
-          })} */}
+          })}
       </div>
     </div>
   )

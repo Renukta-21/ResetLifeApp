@@ -4,6 +4,7 @@ import crossIcon from '../assets/crosss.svg'
 import water from '../assets/water.svg'
 import gym from '../assets/gym.svg'
 import wakeUp from '../assets/wakeUp.svg'
+import axios from "axios"
 
 
 const iconMap = {
@@ -13,7 +14,8 @@ const iconMap = {
     // Agrega más íconos aquí según sea necesario
 };
 
-function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
+
+function TaskCard({ id, icon, bg, streak, repeat, task, description, setTasks,darkCard }) {
     const [firstTouch, setfirstTouch] = useState(null)
     const [offsetX, setOffsetX] = useState(-200)
     const [originalDim, setOriginalDim] = useState({ width: 0 })
@@ -36,6 +38,24 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
             setOffsetX(-200)
         }
     }
+    const handleCompleted = (id) => {
+        axios.delete(`http://localhost:3000/todos/${id}`)
+            .then(res => {
+                axios.post(`http://localhost:3000/completed/`, res.data)
+                    .then(res => {
+                        setTasks(prevTasks=>{
+                            return(
+                                {
+                                    ...prevTasks, completed: prevTasks.completed.concat(res.data)
+                                }
+                            )
+                        })
+                    })
+            })
+            .catch(err => console.log('error al eliminar ' + err))
+
+
+    }
     return (
         <div className="flex w-fit"
             onTouchStart={handleSwipe}
@@ -45,7 +65,8 @@ function TaskCard({ icon, bg, streak, repeat, task, description, darkCard }) {
                 transition: 'transform 0.3s ease'
             }}>
             <div className="w-[200px] flex flex-col items-center justify-center gap-3">
-                <button className="shadow-drop bg-green-600 w-[120px] p-2 flex flex-col items-center rounded-md">
+                <button className="shadow-drop bg-green-600 w-[120px] p-2 flex flex-col items-center rounded-md"
+                    onClick={() => handleCompleted(id)}>
                     <img src={checkIcon} alt="" />
                     <p className="text-white">Mark as done</p>
                 </button>
