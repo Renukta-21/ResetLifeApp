@@ -6,7 +6,7 @@
     .navBar{
         @apply fixed bottom-0 border border-t-black py-4 flex justify-around w-screen z-50 bg-navigation
     }
-    .navBar button img{
+    .navBar button svg{
         width: 30px;
     }
     @keyframes scroll{

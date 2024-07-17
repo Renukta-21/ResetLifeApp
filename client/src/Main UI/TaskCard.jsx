@@ -4,6 +4,12 @@ import crossIcon from '../assets/crosss.svg'
 import water from '../assets/water.svg'
 import gym from '../assets/gym.svg'
 import wakeUp from '../assets/wakeUp.svg'
+import leisure from '../assets/leisure.svg'
+import study from '../assets/study.svg'
+import work from '../assets/work.svg'
+import health from '../assets/health.svg'
+
+
 import axios from "axios"
 
 
@@ -11,6 +17,10 @@ const iconMap = {
     water,
     gym,
     wakeUp,
+    study,
+    leisure,
+    work,
+    health,
     // Agrega más íconos aquí según sea necesario
 };
 
@@ -53,8 +63,6 @@ function TaskCard({ id, icon, bg, streak, repeat, task, description, setTasks,da
                     })
             })
             .catch(err => console.log('error al eliminar ' + err))
-
-
     }
     return (
         <div className="flex w-fit"

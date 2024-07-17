@@ -16,6 +16,7 @@
       "task": "Workout",
       "streak": 5,
       "repeat": "5 days per week",
+      "icon": "gym",
       "bg-imageID": "gymBG",
       "description": "Stay strong, be a man"
   },
@@ -25,6 +26,7 @@
       "task": "Study Time",
       "streak": 5,
       "repeat": "5 days per week",
+      "icon": "study",
       "bg-imageID": "studyBG",
       "description": "A wise man always will be prepared"
   },
@@ -34,6 +36,7 @@
       "task": "Chill Out",
       "streak": 5,
       "repeat": "5 days per week",
+      "icon": "leisure",
       "bg-imageID": "chilloutBG",
       "description": "Get energy up, back to work"
   },
@@ -43,6 +46,7 @@
       "task": "Work",
       "streak": 5,
       "repeat": "5 days per week",
+      "icon": "work",
       "bg-imageID": "workBG",
       "description": "Getting on hard work"
   },
@@ -52,6 +56,7 @@
       "task": "health",
       "streak": 5,
       "repeat": "5 days per week",
+      "icon": "health",
       "bg-imageID": "healthBG",
       "description": "Keep up health, long life"
   }
