@@ -9,9 +9,9 @@
       "icon": "water",
       "bg-imageID": "waterBG",
       "description": "Stad hydrateded, stay energised"
-  },
-  {
-      "id": 2,
+    },
+    {
+      "id": "2",
       "type": "gym",
       "task": "Workout",
       "streak": 5,
@@ -19,9 +19,9 @@
       "icon": "gym",
       "bg-imageID": "gymBG",
       "description": "Stay strong, be a man"
-  },
-  {
-      "id": 3,
+    },
+    {
+      "id": "3",
       "type": "study",
       "task": "Study Time",
       "streak": 5,
@@ -29,9 +29,9 @@
       "icon": "study",
       "bg-imageID": "studyBG",
       "description": "A wise man always will be prepared"
-  },
-  {
-      "id": 4,
+    },
+    {
+      "id": "4",
       "type": "leisure",
       "task": "Chill Out",
       "streak": 5,
@@ -39,9 +39,9 @@
       "icon": "leisure",
       "bg-imageID": "chilloutBG",
       "description": "Get energy up, back to work"
-  },
-  {
-      "id": 5,
+    },
+    {
+      "id": "5",
       "type": "work",
       "task": "Work",
       "streak": 5,
@@ -49,9 +49,9 @@
       "icon": "work",
       "bg-imageID": "workBG",
       "description": "Getting on hard work"
-  },
-  {
-      "id": 6,
+    },
+    {
+      "id": "6",
       "type": "health",
       "task": "health",
       "streak": 5,
@@ -59,7 +59,7 @@
       "icon": "health",
       "bg-imageID": "healthBG",
       "description": "Keep up health, long life"
-  }
+    }
   ],
   "completed": [
     

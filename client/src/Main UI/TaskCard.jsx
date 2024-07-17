@@ -51,6 +51,11 @@ function TaskCard({ id, icon, bg, streak, repeat, task, description, setTasks,da
     const handleCompleted = (id) => {
         axios.delete(`http://localhost:3000/todos/${id}`)
             .then(res => {
+                console.log('hola tonotos')
+                setTasks(prevTasks=> ({
+                    ...prevTasks, 
+                    todos : prevTasks.todos.filter(t=> t.id!== id)
+                }))
                 axios.post(`http://localhost:3000/completed/`, res.data)
                     .then(res => {
                         setTasks(prevTasks=>{
