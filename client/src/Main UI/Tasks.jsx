@@ -4,7 +4,7 @@ import { TaskContext } from "../TaskContext";
 import axios from "axios";
 
 function Tasks() {
-  const [tasks, setTasks] = useState({ todos: null, completed: null })
+  const {tasks, setTasks }= useContext(TaskContext)
   const [activeTab, setActiveTab] = useState('todos'); 
   const {toggleNewTask} = useContext(TaskContext)
   const activeButtonRef = useRef(null);

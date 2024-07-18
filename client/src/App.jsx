@@ -1,5 +1,6 @@
 import MainUI from "./Main UI/MainUI"
-import CalendarUI from "./Main UI/CalendarUI/CalendarUI"
+import Calendar from "./CalendarUI/Calendar"
+import Stats from './StatsUI/Stats'
 import { HomeIcon, CalendarIcon, StatsIcon, DotsIcon } from './Main UI/icons/Icons'
 import dots from './assets/dotsIcon.svg'
 import arrowRight from './assets/arrowRight.svg'
@@ -11,7 +12,7 @@ import chores from './assets/chores.svg'
 import study from './assets/study.svg'
 import health from './assets/health.svg'
 
-import { TaskContext, TaskProvider } from './TaskContext'
+import { TaskContext } from './TaskContext'
 import { useContext, useEffect, useRef, useState } from "react"
 import taskTypes from '../data/taskTypes.json'
 import axios from "axios"
@@ -24,7 +25,7 @@ const mappedICons = {
 
 function App() {
   const [activeNewTask, setActiveNewTask] = useState(null)
-  const { toggleNewTask, setToggleNewTask } = useContext(TaskContext)
+  const { toggleNewTask, setToggleNewTask, tasks } = useContext(TaskContext)
   const [activeIcon, setActiveIcon] = useState(1);
   const activeIconColor = 'rgb(40, 45, 47)'
   const taskDiv = useRef()
@@ -42,7 +43,7 @@ function App() {
       mainPage.style.height = 'auto'
       mainPage.style.overflow = 'auto'
     }
-  }, [toggleNewTask, activeNewTask]);
+  }, [toggleNewTask, activeNewTask, tasks]);
 
   const componentToMount = () => {
     switch (activeIcon) {
@@ -50,7 +51,10 @@ function App() {
         return <MainUI />
         break
       case 2:
-        return <CalendarUI />
+        return <Stats />
+        break
+      case 3:
+        return <Calendar />
         break
     }
   }
@@ -88,6 +92,7 @@ function App() {
 export default App
 
 function AddTask({ handleBack, toggleNewTask, taskDiv, activeNewTask, setActiveNewTask }) {
+  const { tasks, setTasks} = useContext(TaskContext)
   const [newTask, setNewTask] = useState({
     taskName: null,
     description: null
@@ -191,6 +196,12 @@ function AddTask({ handleBack, toggleNewTask, taskDiv, activeNewTask, setActiveN
     axios.post(`http://localhost:3000/todos`, taskData)
       .then(res => {
         console.log(res.data)
+        setTasks(prevTasks => {
+          return ({
+            ...prevTasks,
+            todos: prevTasks.todos.concat(res.data)
+          })
+        })
       })
 
   }
